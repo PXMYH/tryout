@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links Manager</title>
+    <style>
+        :root {
+            color-scheme: dark;
+        }
+        body {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            font-family: "Chalkboard SE", sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .section {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #2d2d2d;
+            border-radius: 8px;
+        }
+        .link-item {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #3d3d3d;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .input-row {
+            margin: 10px 0;
+            display: flex;
+            gap: 10px;
+        }
+        input {
+            background-color: #3d3d3d;
+            border: 1px solid #555;
+            color: white;
+            padding: 8px;
+            border-radius: 4px;
+            flex: 1;
+            font-family: inherit;
+        }
+        button {
+            background-color: #4a4a4a;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: inherit;
+        }
+        button:hover {
+            background-color: #5a5a5a;
+        }
+        #message {
+            color: #4CAF50;
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="section" id="displaySection">
+        <h2>Saved Links</h2>
+        <div id="linksList"></div>
+    </div>
+
+    <div class="section">
+        <h2>Add New Link</h2>
+        <div class="input-row">
+            <input type="text" id="titleInput" placeholder="Enter title">
+        </div>
+        <div class="input-row">
+            <input type="text" id="linkInput" placeholder="Enter link">
+        </div>
+        <div class="input-row">
+            <button onclick="addLink()">Add</button>
+        </div>
+        <div id="message">Copy this to your links.json file:</div>
+    </div>
+
+    <script>
+        let links = [];
+
+        // Load links from links.json
+        fetch('links.json')
+            .then(response => response.json())
+            .then(data => {
+                links = data;
+                displayLinks();
+            })
+            .catch(error => console.error('Error loading links:', error));
+
+        function displayLinks() {
+            const linksList = document.getElementById('linksList');
+            linksList.innerHTML = '';
+            links.forEach(item => {
+                const div = document.createElement('div');
+                div.className = 'link-item';
+                div.textContent = item.title;
+                div.onclick = () => window.open(item.link, '_blank');
+                linksList.appendChild(div);
+            });
+        }
+
+        function addLink() {
+            const title = document.getElementById('titleInput').value;
+            const link = document.getElementById('linkInput').value;
+            
+            if (title && link) {
+                links.push({ title, link });
+                displayLinks();
+                
+                // Show the updated JSON
+                const message = document.getElementById('message');
+                message.style.display = 'block';
+                message.innerHTML = 'Copy this to your links.json file:<br><pre>' + 
+                    JSON.stringify(links, null, 2) + '</pre>';
+                
+                document.getElementById('titleInput').value = '';
+                document.getElementById('linkInput').value = '';
+            }
+        }
+    </script>
+</body>
+</html>
