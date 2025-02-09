@@ -2,5 +2,61 @@
   {
     "title": "speaches",
     "link": "https://github.com/speaches-ai/speaches"
+  },
+  {
+    "title": "cline",
+    "link": "https://github.com/cline/cline"
+  },
+  {
+    "title": "YuE",
+    "link": "https://github.com/multimodal-art-projection/YuE"
+  },
+  {
+    "title": "ingest",
+    "link": "https://github.com/sammcj/ingest"
+  },
+  {
+    "title": "repomix",
+    "link": "https://github.com/yamadashy/repomix"
+  },
+  {
+    "title": "yek",
+    "link": "https://github.com/bodo-run/yek"
+  },
+  {
+    "title": "vLLM",
+    "link": "https://llm.datasette.io/en/stable/"
+  },
+  {
+    "title": "awesome-open-source-ai",
+    "link": "https://github.com/suncloudsmoon/awesome-open-source-ai"
+  },
+  {
+    "title": "open-r1",
+    "link": "https://github.com/huggingface/open-r1"
+  },
+  {
+    "title": "smolResearcher",
+    "link": "https://github.com/Forest-Person/smolResearcher/blob/main/smolResearcher.py"
+  },
+  {
+    "title": "gsh",
+    "link": "https://github.com/atinylittleshell/gsh"
+  },
+  {
+    "title": "remote rocketchip",
+    "link": "https://www.jobsearchdb.com/job-board/remote-rocketship"
+  },
+  {
+    "title": "remoterocketship",
+    "link": "https://www.remoterocketship.com/?ref=jobsearchdb&page=1&sort=DateAdded&locations=United+States&seniority=mid%2Csenior&jobTitle=Software+Engineer&minSalary=250000"
+  },
+  {
+    "title": "hiring cafe",
+    "link": "https://hiring.cafe/"
+  },
+  {
+    "title": "stats on Mac",
+    "link": "https://github.com/exelban/stats"
   }
 ]
