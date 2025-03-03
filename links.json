@@ -58,5 +58,25 @@
   {
     "title": "stats on Mac",
     "link": "https://github.com/exelban/stats"
+  },
+  {
+    "title": "Rocketry",
+    "link": "https://rocketry.readthedocs.io/en/stable/"
+  },
+  {
+    "title": "AI Cofounded",
+    "link": "https://www.aicofounded.com"
+  },
+  {
+    "title": "AI resume",
+    "link": "https://www.resume.lol"
+  },
+  {
+    "title": "Code Crafter",
+    "link": "https://app.codecrafters.io/catalog"
+  },
+  {
+    "title": "Citadel Terminal Game",
+    "link": "https://terminal.c1games.com/"
   }
 ]
